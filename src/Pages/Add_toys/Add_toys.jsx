@@ -15,23 +15,28 @@ const Add_toys = () => {
 
 
     const onSubmit = (data) => {
+        console.log(data)
+        fetch('http://localhost:5000/addtoys', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
 
-        // fetch("http://localhost:5000/postJob", {
-        //     method: "POST",
-        //     headers: { "Content-Type": "application/json" },
-        //     body: JSON.stringify(data),
-        // })
-        //     .then((res) => res.json())
-        //     .then((result) => {
-        //         console.log(result);
-        //     });
-        console.log(data);
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    alert('hoise')
+                }
+            })
     };
 
 
 
     return (
-        <div className='flex  flex-col md:flex-row mt-16'>
+        <div className='flex  flex-col md:flex-row mt-16 bg-gray-300 p-20 rounded-md'>
             <div className='w-1/2'></div>
             <form className='space-y-8 w-1/2'
                 onSubmit={handleSubmit(onSubmit)}
@@ -65,11 +70,16 @@ const Add_toys = () => {
                 <div className='flex flex-col md:flex-row gap-8'>
                     <input
                         className="input input-bordered w-full "
+                        {...register("toys_image")}
+                        placeholder="toys image"
+                    />
+                    <input
+                        className="input input-bordered w-full "
                         {...register("description")}
                         placeholder="description"
                     />
                 </div>
-                <input className="submit-btn btn " value="Post Job" type="submit" />
+                <input className="submit-btn btn w-full   " value="Post Job" type="submit" />
             </form>
         </div>
     );

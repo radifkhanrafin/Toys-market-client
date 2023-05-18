@@ -11,7 +11,7 @@ const Navbar = () => {
     const navbarList = <>
         <li><Link>Home</Link></li>
         <li><Link>All Toys</Link></li>
-        <li>{user &&  <Link>My Toys</Link>}</li>
+        <li>{user &&  <Link to='/mytoys'>My Toys</Link>}</li>
         <li><Link to='/addtoy'>Add a Toy</Link></li>
         <li><Link> Blogs</Link></li>
         <li>
