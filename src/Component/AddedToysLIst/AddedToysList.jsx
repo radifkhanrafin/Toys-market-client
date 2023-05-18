@@ -1,28 +1,25 @@
 import React from 'react';
 import { FaBeer, FaTrash } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 
-const AddedToysList = ({ toy }) => {
-    const { Quantity, Seller, description, sub_category, toys_image, toys_name  ,_id} = toy
+const AddedToysList = ({ toy , deleteItems }) => {
+    const { Quantity, Seller, description, sub_category, toys_image, toys_name, _id } = toy
 
 
 
-    const deleteItems=(_id)=>{
-        console.log('delete' , _id)
-    }
+  
 
 
     return (
         <tr>
             <td>
-                <button onClick={()=>deleteItems(_id)}><FaTrash className='text-2xl'/></button>
+                <button onClick={() => deleteItems(_id)}><FaTrash className='text-2xl' /></button>
             </td>
             <td>
                 <div className="flex items-center space-x-3">
-                    {/* <div className="avatar"> */}
                     <div className="mask mask-squircle w-32">
                         <img src={toys_image} alt="toys" />
-                        {/* </div> */}
                     </div>
                     <div>
                         <div className="font-bold">Hart Hagerty</div>

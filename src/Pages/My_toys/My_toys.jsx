@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import AddedToysList from '../../Component/AddedToysLIst/AddedToysList';
+import Swal from 'sweetalert2';
 
 const My_toys = () => {
 
-    const [addedtoys , setAddedtoys]=useState([]);
+    const [addedtoys, setAddedtoys] = useState([]);
     useEffect(() => {
 
         fetch('http://localhost:5000/mytoys')
@@ -11,6 +12,42 @@ const My_toys = () => {
             .then(data => setAddedtoys(data))
     }, []);
     console.log(addedtoys)
+
+    const deleteItems = (_id) => {
+        console.log('delete')
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/mytoys/:${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data.deletedCount > 0) {
+                            alert('delete successfull')
+                            const remainingToys = addedtoys.filter(toy => toy._id !== _id);
+                            setAddedtoys(remainingToys)
+                        }
+                    })
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+
+                )
+                console.log(_id)
+            }
+        })
+    }
 
     return (
         <div>
@@ -30,13 +67,14 @@ const My_toys = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            addedtoys.map(toy=><AddedToysList
-                            toy={toy}
-                            key={toy._id}
+                            addedtoys.map(toy => <AddedToysList
+                                toy={toy}
+                                key={toy._id}
+                                deleteItems={deleteItems}
                             ></AddedToysList>)
                         }
-                       
-                      
+
+
 
                     </tbody>
 
