@@ -63,7 +63,7 @@ const Add_toys = () => {
                     />
                     <input
                         className="input input-bordered w-full"
-                        {...register("Seller", { required: true })}
+                        {...register("email", { required: true })}
                         value={user?.email}
                     />
                 </div>

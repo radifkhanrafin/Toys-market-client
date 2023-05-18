@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 
 
 const AddedToysList = ({ toy , deleteItems ,updateItems }) => {
-    const { Quantity, Seller, description, sub_category, toys_image, toys_name, _id } = toy
+    const { Quantity, email, description, sub_category, toys_image, toys_name, _id } = toy
 
 
 
@@ -38,7 +38,7 @@ const AddedToysList = ({ toy , deleteItems ,updateItems }) => {
                 <h4 className='font-bold'>{Quantity}</h4>
             </td>
             <td>
-                <h4 className='font-bold'>{Seller}</h4>
+                <h4 className='font-bold'>{email}</h4>
             </td>
             <th>
                 <button className="btn btn-ghost btn-xs">details</button>

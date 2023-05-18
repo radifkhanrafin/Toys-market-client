@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import AddedToysList from '../../Component/AddedToysLIst/AddedToysList';
 import Swal from 'sweetalert2';
+import { useContext } from 'react';
+import { AuthContext } from '../../AuthProvaider/Provaides';
 
 const My_toys = () => {
 
+    const { user } = useContext(AuthContext)
+    // console.log(user?.email)
     const [addedtoys, setAddedtoys] = useState([]);
+
+    const url = `http://localhost:5000/mytoys?email=${user?.email}`
+   
     useEffect(() => {
+        fetch(url)
+        .then(res=>res.json())
+        .then(data=>setAddedtoys(data))
+    }, [url]);
 
-        fetch('http://localhost:5000/mytoys')
-            .then(res => res.json())
-            .then(data => setAddedtoys(data))
-    }, []);
+
     console.log(addedtoys)
-
     const deleteItems = (_id) => {
         console.log('delete')
         Swal.fire({
@@ -59,15 +66,15 @@ const My_toys = () => {
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, update it!'
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
-              Swal.fire(
-                'Updated!',
-                'Your Data has been update.',
-                'success'
-              )
+                Swal.fire(
+                    'Updated!',
+                    'Your Data has been update.',
+                    'success'
+                )
             }
-          })
+        })
     }
 
     return (
