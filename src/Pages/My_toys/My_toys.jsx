@@ -50,6 +50,26 @@ const My_toys = () => {
         })
     }
 
+    const updateItems = () => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, update it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Updated!',
+                'Your Data has been update.',
+                'success'
+              )
+            }
+          })
+    }
+
     return (
         <div>
             <div className="overflow-x-auto w-full mt-16">
@@ -72,6 +92,7 @@ const My_toys = () => {
                                 toy={toy}
                                 key={toy._id}
                                 deleteItems={deleteItems}
+                                updateItems={updateItems}
                             ></AddedToysList>)
                         }
 

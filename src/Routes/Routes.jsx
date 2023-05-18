@@ -9,6 +9,7 @@ import SignIn from '../Pages/SignIn/SignIn';
 import Home from '../Pages/Home/Home';
 import Add_toys from '../Pages/Add_toys/Add_toys';
 import My_toys from '../Pages/My_toys/My_toys';
+import Blog from '../Pages/Blog/Blog';
 const router = createBrowserRouter([
     {
         path: "/",
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             {
                 path:'/mytoys',
                 element: <My_toys></My_toys>
+            },
+            {
+                path:'/blog',
+                element: <Blog></Blog>
             },
         ]
     },

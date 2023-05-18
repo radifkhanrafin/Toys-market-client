@@ -13,7 +13,7 @@ const Navbar = () => {
         <li><Link>All Toys</Link></li>
         <li>{user &&  <Link to='/mytoys'>My Toys</Link>}</li>
         <li><Link to='/addtoy'>Add a Toy</Link></li>
-        <li><Link> Blogs</Link></li>
+        <li><Link to='/blog'> Blogs</Link></li>
         <li>
             {
                 user && <div className="tooltip tooltip-bottom mx-2" data-tip={user.email}>
@@ -53,7 +53,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link className='font-extrabold text-2xl text-transparent bg-clip-text  bg-gradient-to-r from-blue-400 via-violet-600 to-blue-500'> Toys Center</Link>
+                <Link className='font-extrabold text-2xl text-transparent bg-clip-text  bg-gradient-to-r from-blue-400 via-violet-600 to-blue-500'> <span className='text-4xl font-extrabold -mr-2 '>T</span> oys Center</Link>
             </div>
         </div>
     );

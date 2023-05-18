@@ -1,9 +1,9 @@
 import React from 'react';
-import { FaBeer, FaTrash } from 'react-icons/fa';
+import { FaBeer, FaPen, FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 
-const AddedToysList = ({ toy , deleteItems }) => {
+const AddedToysList = ({ toy , deleteItems ,updateItems }) => {
     const { Quantity, Seller, description, sub_category, toys_image, toys_name, _id } = toy
 
 
@@ -13,8 +13,9 @@ const AddedToysList = ({ toy , deleteItems }) => {
 
     return (
         <tr>
-            <td>
-                <button onClick={() => deleteItems(_id)}><FaTrash className='text-2xl' /></button>
+            <td >
+                <button className='mr-4' onClick={() => deleteItems(_id)}><FaTrash className='text-xl' /></button>
+                <button onClick={() => updateItems(_id)}><FaPen className='text-xl' /></button>
             </td>
             <td>
                 <div className="flex items-center space-x-3">

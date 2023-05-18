@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
+
+
 const Banner = () => {
     return (
         <div className="carousel w-full">
