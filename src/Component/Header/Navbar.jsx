@@ -3,33 +3,34 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvaider/Provaides';
 
 const Navbar = () => {
-    const { user , logOut} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     // console.log(user?.photoURL)
-    const handleLogOut=()=>{
+    const handleLogOut = () => {
         logOut()
     }
     const navbarList = <>
         <li><Link>Home</Link></li>
-        <li><Link>All Toys</Link></li>
-        <li>{user &&  <Link to='/mytoys'>My Toys</Link>}</li>
+        <li><Link to='allToys'>All Toys</Link></li>
         <li><Link to='/addtoy'>Add a Toy</Link></li>
         <li><Link to='/blog'> Blogs</Link></li>
+
+        <li>
+            {user ? <>
+                <Link to='/mytoys'>My Toys</Link>
+                <Link onClick={handleLogOut} >Log Out</Link>
+            </> : <Link to='/login'>Login</Link>}
+        </li>
+
         <li>
             {
                 user && <div className="tooltip tooltip-bottom mx-2" data-tip={user.email}>
                     <button className="-m-14">
                         <img className='w-12 -mb-5 rounded-full' src={user.photoURL} alt="" />
                     </button>
-
                 </div>
             }
         </li>
-        <li>
-            {
-                user ? <Link onClick={handleLogOut} >Log Out</Link> : <Link to='/login'>Login</Link>
-            }
 
-        </li>
     </>
     return (
 
