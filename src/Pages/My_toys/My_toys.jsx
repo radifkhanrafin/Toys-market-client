@@ -26,25 +26,26 @@ const My_toys = () => {
         }).then((result) => {
 
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/mytoys/:${_id}`, {
+                fetch(`http://localhost:5000/mytoys/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
                     .then(data => {
                         console.log(data)
+
                         if (data.deletedCount > 0) {
-                            alert('delete successfull')
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                            console.log(_id)
                             const remainingToys = addedtoys.filter(toy => toy._id !== _id);
                             setAddedtoys(remainingToys)
                         }
                     })
-                Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
 
-                )
-                console.log(_id)
+
             }
         })
     }
