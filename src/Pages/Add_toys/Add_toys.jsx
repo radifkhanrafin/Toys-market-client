@@ -57,8 +57,14 @@ const Add_toys = () => {
 
                     <input
                         className="input input-bordered w-full"
-                        {...register("Quantity", { required: true })}
+                        {...register("quantity", { required: true })}
                         placeholder="quantity"
+                        type="number"
+                    />
+                    <input
+                        className="input input-bordered w-full"
+                        {...register("price", { required: true })}
+                        placeholder="price"
                         type="number"
                     />
                     <input
@@ -79,7 +85,7 @@ const Add_toys = () => {
                         placeholder="description"
                     />
                 </div>
-                <input className="submit-btn btn w-full   " value="Post Job" type="submit" />
+                <input className="submit-btn btn w-full" value="Post Job" type="submit" />
             </form>
         </div>
     );

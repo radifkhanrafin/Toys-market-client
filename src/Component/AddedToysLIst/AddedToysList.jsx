@@ -3,12 +3,12 @@ import { FaBeer, FaPen, FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 
-const AddedToysList = ({ toy , deleteItems ,updateItems }) => {
-    const { Quantity, email, description, sub_category, toys_image, toys_name, _id } = toy
+const AddedToysList = ({ toy, deleteItems, updateItems }) => {
+    const { Quantity, email, price, description, sub_category, toys_image, toys_name, _id } = toy
 
 
 
-  
+
 
 
     return (
@@ -19,13 +19,10 @@ const AddedToysList = ({ toy , deleteItems ,updateItems }) => {
             </td>
             <td>
                 <div className="flex items-center space-x-3">
-                    <div className="mask mask-squircle w-32">
+                    <div className="mask mask-squircle w-36 ">
                         <img src={toys_image} alt="toys" />
                     </div>
-                    <div>
-                        <div className="font-bold">Hart Hagerty</div>
-                        <div className="text-sm opacity-50">United States</div>
-                    </div>
+                   
                 </div>
             </td>
             <td>
