@@ -3,7 +3,7 @@ import { FaBeer, FaPen, FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 
-const AddedToysList = ({ toy, deleteItems, updateItems }) => {
+const AddedToysList = ({ toy, index, deleteItems, updateItems }) => {
     const {
         description,
         email,
@@ -24,6 +24,7 @@ const AddedToysList = ({ toy, deleteItems, updateItems }) => {
 
     return (
         <tr>
+            <td>{index + 1}</td>
             <td >
                 <button className='mr-4' onClick={() => deleteItems(_id)}><FaTrash className='text-xl' /></button>
                 <button onClick={() => updateItems(_id)}><FaPen className='text-xl' /></button>

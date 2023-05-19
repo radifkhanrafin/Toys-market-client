@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Toys_card from '../Toys_Card/Toys_card';
+import Modal_Data from '../Modal/Modal_Data';
 
 const ToysByCategory = () => {
     const [activeTab, setActiveTab] = useState("");
-    const [selectCategory , setSelectcategory]=useState([])
+    const [selectCategory, setSelectcategory] = useState([]);
     const handleTabClick = (tabName) => {
         setActiveTab(tabName);
     };
@@ -63,12 +64,13 @@ const ToysByCategory = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>
                 {
-                    selectCategory.map(toy=><Toys_card
-                    key={toy._id}
-                    toy={toy}
+                    selectCategory.map(toy => <Toys_card
+                        key={toy._id}
+                        toy={toy}
                     ></Toys_card>)
                 }
             </div>
+
         </div>
     );
 };

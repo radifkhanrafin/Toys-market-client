@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import { FaArrowAltCircleRight, FaBeer } from 'react-icons/fa';
-import Modal from '../Modal/Modal';
-const Toys_card = ({ toy }) => {
+import Modal from '../Modal/Modal_Data';
+const Toys_card = ({ toy  }) => {
+    
     const {
         description,
         email,
@@ -29,11 +31,10 @@ const Toys_card = ({ toy }) => {
                     <h2 className="card-title">Price : {price} $</h2>
                     <p>Rating : {rating}</p>
                     <div className="card-actions justify-end">
-                        <button className=""><FaArrowAltCircleRight className='text-3xl text-neutral-500' /></button>
+                        <Link ><FaArrowAltCircleRight className='text-3xl text-neutral-500' /></Link>
                     </div>
                 </div>
             </div>
-            <Modal></Modal>
         </div>
     );
 };

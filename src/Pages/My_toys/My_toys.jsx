@@ -11,11 +11,11 @@ const My_toys = () => {
     const [addedtoys, setAddedtoys] = useState([]);
 
     const url = `http://localhost:5000/mytoys?email=${user?.email}`
-   
+
     useEffect(() => {
         fetch(url)
-        .then(res=>res.json())
-        .then(data=>setAddedtoys(data))
+            .then(res => res.json())
+            .then(data => setAddedtoys(data))
     }, [url]);
 
 
@@ -83,7 +83,7 @@ const My_toys = () => {
             <div className="overflow-x-auto w-full mt-16">
                 <table className="table w-full">
                     <thead>
-                        <tr>
+                        <tr> <th>#</th>
                             <th>Delete / Update</th>
                             <th>Toys</th>
                             <th>Toys Name</th>
