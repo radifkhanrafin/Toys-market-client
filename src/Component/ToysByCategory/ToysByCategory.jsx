@@ -12,7 +12,7 @@ const ToysByCategory = () => {
     //             setJob(result);
     //         });
     // }, [activeTab]);
-    console.log(activeTab)
+    // console.log(activeTab)
     return (
         <div className='mt-12 '>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 mx-12 gap-10 md:gap-2">

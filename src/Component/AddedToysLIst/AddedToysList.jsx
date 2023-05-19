@@ -13,7 +13,8 @@ const AddedToysList = ({ toy, deleteItems, updateItems }) => {
         seller_name,
         sub_category,
         toys_image,
-        toys_name 
+        toys_name ,
+        _id
      } = toy
 
 
