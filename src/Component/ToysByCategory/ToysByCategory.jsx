@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import Toys_card from '../Toys_Card/Toys_card';
 
 const ToysByCategory = () => {
-    const [activeTab, setActiveTab] = useState("sports_car");
+    const [activeTab, setActiveTab] = useState("");
+    const [selectCategory , setSelectcategory]=useState([])
     const handleTabClick = (tabName) => {
         setActiveTab(tabName);
     };
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/allJobsByCategory/${activeTab}`)
-    //         .then((res) => res.json())
-    //         .then((result) => {
-    //             setJob(result);
-    //         });
-    // }, [activeTab]);
-    // console.log(activeTab)
+    useEffect(() => {
+        fetch(`http://localhost:5000/toyByCategory/${activeTab}`)
+            .then((res) => res.json())
+            .then((result) => {
+                console.log(result)
+                setSelectcategory(result);
+            });
+    }, [activeTab]);
+    console.log(selectCategory)
     return (
-        <div className='mt-12 '>
+        <div className='my-12  '>
+            <h2 className='text-5xl my-16 font-bold text-center'>You can search Toys By Using this <br /> Sub-Categoy</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 mx-12 gap-10 md:gap-2">
                 {/* sports_car */}
                 <button
@@ -56,6 +60,14 @@ const ToysByCategory = () => {
                     Police Cars
                 </button>
 
+            </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>
+                {
+                    selectCategory.map(toy=><Toys_card
+                    key={toy._id}
+                    toy={toy}
+                    ></Toys_card>)
+                }
             </div>
         </div>
     );

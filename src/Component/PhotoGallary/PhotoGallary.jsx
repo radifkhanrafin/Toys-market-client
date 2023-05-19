@@ -16,13 +16,18 @@ const PhotoGallary = () => {
                 <h1>Our Product Gallary</h1>
             </div>
             <div className='  grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center  max-h-[70vh] overflow-y-scroll'>
-            {
-                toys.map(toy =>
-                    <figure className=" h-60 w-72 overflow-hidden border-8 rounded-tl-[85px] rounded-br-[85px]  p-5 flex justify-center items-center">
-                        <img src={toy.toys_image} alt="Shoes" className="rounded-xl " />
-                    </figure>)
-            }
-        </div>
+                {
+                    toys.map(toy =>
+                        <div  data-aos="fade-down"
+                        data-aos-easing="linear"
+                        data-aos-duration="1500"
+                        >
+                            <figure className=" h-60 w-72 overflow-hidden border-8 rounded-tl-[85px] rounded-br-[85px]  p-5 flex justify-center items-center">
+                                <img src={toy.toys_image} alt="Shoes" className="rounded-xl " />
+                            </figure>
+                        </div>)
+                }
+            </div>
         </div>
     );
 };
