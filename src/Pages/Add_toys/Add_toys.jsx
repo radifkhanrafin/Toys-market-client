@@ -4,7 +4,7 @@ import { AuthContext } from '../../AuthProvaider/Provaides';
 
 const Add_toys = () => {
     const { user } = useContext(AuthContext)
-
+console.log(user)
     const {
         register,
         handleSubmit,
@@ -67,12 +67,9 @@ const Add_toys = () => {
                         placeholder="price"
                         type="number"
                     />
-                    <input
-                        className="input input-bordered w-full"
-                        {...register("email", { required: true })}
-                        value={user?.email}
-                    />
+
                 </div>
+
                 <div className='flex flex-col md:flex-row gap-8'>
                     <input
                         className="input input-bordered w-full "
@@ -80,11 +77,32 @@ const Add_toys = () => {
                         placeholder="toys image"
                     />
                     <input
-                        className="input input-bordered w-full "
-                        {...register("description")}
-                        placeholder="description"
+                        className="input input-bordered w-full"
+                        {...register("rating", { required: true })}
+                        placeholder="rating"
+                        type="number"
                     />
                 </div>
+                <div className='flex flex-col md:flex-row gap-8'>
+                    <input
+                        className="input input-bordered w-full"
+                        {...register("email", { required: true })}
+                        value={user?.email}
+                    />
+                    <input
+                        className="input input-bordered w-full"
+                        {...register("seller_name", { required: true })}
+                        value={user?.displayName}
+                        type="text"
+                    />
+
+                </div>
+
+                <input
+                    className="input input-bordered w-full "
+                    {...register("description")}
+                    placeholder="description"
+                />
                 <input className="submit-btn btn w-full" value="Post Job" type="submit" />
             </form>
         </div>
@@ -92,3 +110,13 @@ const Add_toys = () => {
 };
 
 export default Add_toys;
+
+// Picture URL of the to**
+// Name,**
+// seller name (if available from the logged in user)**
+// seller email (info from the logged in user)**
+// Sub-category**
+// Price,**
+// Rating,
+// Available quantity**
+// Detail description**

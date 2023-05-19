@@ -79,11 +79,12 @@ const My_toys = () => {
 
     return (
         <div>
+            <h3>my toys : {addedtoys.length}</h3>
             <div className="overflow-x-auto w-full mt-16">
                 <table className="table w-full">
                     <thead>
                         <tr>
-                            <th>Delete</th>
+                            <th>Delete / Update</th>
                             <th>Toys</th>
                             <th>Toys Name</th>
                             <th>Toys Category</th>
