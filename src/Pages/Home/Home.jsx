@@ -8,7 +8,7 @@ const Home = () => {
     const {user}=useContext(AuthContext);
     return (
         <div>
-            {/* <Banner></Banner> */}
+            <Banner></Banner>
             <ToysByCategory></ToysByCategory>
         </div>
     );

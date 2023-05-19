@@ -5,22 +5,32 @@ import AllToysTbl from '../../Component/AllToysTable/AllToysTbl';
 const All_toys = () => {
 
 
-    const [alltoys , setAlltoys]=useState([])
+    const [alltoys, setAlltoys] = useState([])
+    const [searchToy, setSearchToy] = useState("");
 
-    const allToysUrl='http://localhost:5000/toys'
+    const allToysUrl = 'http://localhost:5000/toys'
+
     useEffect(() => {
-      fetch(allToysUrl)
-      .then(res=>res.json())
-      .then(data=>{
-        console.log(data)
-        setAlltoys(data)
-    })
+        fetch(allToysUrl)
+            .then(res => res.json())
+            .then(data => {
+                setAlltoys(data)
+            })
     }, [allToysUrl]);
-    console.log(alltoys.length)
+    // console.log(alltoys.length)
+
+    const handleSearch = () => {
+    };
     return (
-       <div>
-        <h1>toys Length : {alltoys.length}</h1>
-        <div className="overflow-x-auto w-full mt-16">
+        <div>
+            <h1>toys Length : {alltoys.length}</h1>
+            <div className="search-box p-2 text-center">
+            <input 
+             onChange={(e) => setSearchToy(e.target.value)}
+            type="text" placeholder="Type here" className="input input-bordered input-primary roun w-full max-w-xs" />
+                <button className='btn btn-outline btn-secondary w-36' onClick={handleSearch}>Search</button>
+            </div>
+            <div className="overflow-x-auto w-full mt-16">
                 <table className="table w-full">
                     <thead>
                         <tr>
@@ -33,7 +43,6 @@ const All_toys = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 1 */}
                         {
                             alltoys.map(toy => <AllToysTbl
                                 toy={toy}
@@ -47,7 +56,7 @@ const All_toys = () => {
 
                 </table>
             </div>
-       </div>
+        </div>
     );
 };
 

@@ -12,7 +12,7 @@ const Banner = () => {
                 <div className="absolute flex items-center  bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] w-full  h-full top-0 left-0 ">
 
                     <div className='text-white space-y-7 lg:w-[600px] ml-12'>
-                        <h1 className='text-6xl font-extrabold'>Affordable Price For Track Servicing</h1>
+                        {/* <h1 className='text-6xl font-extrabold'>Affordable Price For Track Servicing</h1> */}
                         <p className='capitalize'>it is our responsibility to be friendly with customers and help them</p>
                         <button className='btn btn-warning mr-5'> Discover More</button>
                         <button className='btn btn-outline btn-secondary'> Latest Project</button>
@@ -28,7 +28,7 @@ const Banner = () => {
                 <img src="https://i.ibb.co/NpWbfCD/51-IQb-Gk-YWm-L.jpg" className="w-full h-[calc(100vh-75px)]" />
                 <div className="absolute flex items-center  bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] w-full  h-full top-0 left-0 ">
                     <div className='text-white space-y-7 lg:w-[600px] ml-12'>
-                        <h1 className='text-6xl font-extrabold'>Affordable Price For Bus Servicing</h1>
+                        {/* <h1 className='text-6xl font-extrabold'>Affordable Price For Bus Servicing</h1> */}
                         <p className='capitalize'>it is our responsibility to be friendly with customers and help them</p>
                         <button className='btn btn-warning mr-5'> Discover More</button>
                         <button className='btn btn-outline btn-secondary'> Latest Project</button>
@@ -43,7 +43,7 @@ const Banner = () => {
                 <img src="https://i.ibb.co/Hhtcg4T/images.jpg" className="w-full h-[calc(100vh-75px)]" />
                 <div className="absolute flex items-center  bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] w-full  h-full top-0 left-0 ">
                     <div className='text-white space-y-7 lg:w-[600px] ml-12'>
-                        <h1 className='text-6xl font-extrabold'>Affordable Price For Car Servicing</h1>
+                        {/* <h1 className='text-6xl font-extrabold'>Affordable Price For Car Servicing</h1> */}
                         <p className='capitalize'>it is our responsibility to be friendly with customers and help them</p>
                         <button className='btn btn-warning mr-5'> Discover More</button>
                         <button className='btn btn-outline btn-secondary'> Latest Project</button>
@@ -58,7 +58,7 @@ const Banner = () => {
                 <img src="https://i.ibb.co/ggXvDRT/jeong-pei-Dzq-C1-R1-GX1-E-unsplash.jpg" className="w-full h-[calc(100vh-75px)]" />
                 <div className="absolute flex items-center  bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] w-full  h-full top-0 left-0 ">
                     <div className='text-white space-y-7 lg:w-[600px] ml-12'>
-                        <h1 className='text-6xl font-extrabold'>Affordable Price For Sports  Car Servicing</h1>
+                        {/* <h1 className='text-6xl font-extrabold'>Affordable Price For Sports  Car Servicing</h1> */}
                         <p className='capitalize'>it is our responsibility to be friendly with customers and help them</p>
                         <button className='btn btn-warning mr-5'> Discover More</button>
                         <button className='btn btn-outline btn-secondary'> Latest Project</button>
@@ -73,7 +73,7 @@ const Banner = () => {
                 <img src="https://i.ibb.co/L5VNb4R/images-6.jpg" className="w-full h-[calc(100vh-75px)]" />
                 <div className="absolute flex items-center  bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] w-full  h-full top-0 left-0 ">
                     <div className='text-white space-y-7 lg:w-[600px] ml-12'>
-                        <h1 className='text-6xl font-extrabold'>Affordable Price For fire  Car Servicing</h1>
+                        {/* <h1 className='text-6xl font-extrabold'>Affordable Price For fire  Car Servicing</h1> */}
                         <p className='capitalize'>it is our responsibility to be friendly with customers and help them</p>
                         <button className='btn btn-warning mr-5'> Discover More</button>
                         <button className='btn btn-outline btn-secondary'> Latest Project</button>
@@ -88,7 +88,7 @@ const Banner = () => {
                 <img src="https://i.ibb.co/Wv5ccjP/Police-Car-toy.webp" className="w-full h-[calc(100vh-75px)]" />
                 <div className="absolute flex items-center  bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] w-full  h-full top-0 left-0 ">
                     <div className='text-white space-y-7 lg:w-[600px] ml-12'>
-                        <h1 className='text-6xl font-extrabold'>Affordable Price For police  Car Servicing</h1>
+                        {/* <h1 className='text-6xl font-extrabold'>Affordable Price For police  Car Servicing</h1> */}
                         <p className='capitalize'>it is our responsibility to be friendly with customers and help them</p>
                         <button className='btn btn-warning mr-5'> Discover More</button>
                         <button className='btn btn-outline btn-secondary'> Latest Project</button>
