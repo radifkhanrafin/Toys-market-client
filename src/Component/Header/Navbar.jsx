@@ -11,8 +11,8 @@ const Navbar = () => {
     const navbarList = <>
         <li><Link>Home</Link></li>
         <li><Link to='allToys'>All Toys</Link></li>
-        <li><Link to='/addtoy'>Add a Toy</Link></li>
         <li><Link to='/blog'> Blogs</Link></li>
+        <li><Link to='/addtoy'>Add a Toy</Link></li>
 
         <li>
             {user ? <>

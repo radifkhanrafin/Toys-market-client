@@ -19,7 +19,10 @@ const ToysByCategory = () => {
     console.log(selectCategory)
     return (
         <div className='my-12  '>
-            <h2 className='text-5xl my-16 font-bold text-center'>You can search Toys By Using this <br /> Sub-Categoy</h2>
+            <div className='bg-gradient-to-r from-cyan-500 to-blue-500  p-3 mb-10 rounded-2xl'>
+                <h2 className='text-5xl my-16 font-bold text-center'>You can search Toys By Using this <br /> Sub-Categoy
+                </h2>
+            </div>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 mx-12 gap-10 md:gap-2">
                 {/* sports_car */}
                 <button

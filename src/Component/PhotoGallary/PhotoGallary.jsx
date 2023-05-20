@@ -1,6 +1,5 @@
-import { data } from 'autoprefixer';
 import React, { useEffect, useState } from 'react';
-
+import Marquee from "react-fast-marquee";
 const PhotoGallary = () => {
     const [toys, setToys] = useState([])
     const toysUrl = 'http://localhost:5000/toys'
@@ -13,14 +12,16 @@ const PhotoGallary = () => {
     return (
         <div className='my-12'>
             <div className='my-8 text-center'>
-                <h1>Our Product Gallary</h1>
+                <Marquee className=' w-3/4 mx-auto'>
+                    I can be a React component, multiple React components, or just some text.
+                </Marquee>
             </div>
             <div className='  grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center  max-h-[70vh] overflow-y-scroll'>
                 {
                     toys.map(toy =>
-                        <div  data-aos="fade-down"
-                        data-aos-easing="linear"
-                        data-aos-duration="1500"
+                        <div data-aos="fade-down"
+                            data-aos-easing="linear"
+                            data-aos-duration="1500"
                         >
                             <figure className=" h-60 w-72 overflow-hidden border-8 rounded-tl-[85px] rounded-br-[85px]  p-5 flex justify-center items-center">
                                 <img src={toy.toys_image} alt="Shoes" className="rounded-xl " />
