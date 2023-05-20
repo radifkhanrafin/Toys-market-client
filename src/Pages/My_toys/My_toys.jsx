@@ -3,6 +3,7 @@ import AddedToysList from '../../Component/AddedToysLIst/AddedToysList';
 import Swal from 'sweetalert2';
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvaider/Provaides';
+import { FaPen, FaTrash } from 'react-icons/fa';
 
 const My_toys = () => {
 
@@ -19,7 +20,7 @@ const My_toys = () => {
     }, [url]);
 
 
-    console.log(addedtoys)
+    // console.log(addedtoys)
     const deleteItems = (_id) => {
         console.log('delete')
         Swal.fire({
@@ -57,33 +58,13 @@ const My_toys = () => {
         })
     }
 
-    const updateItems = () => {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, update it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire(
-                    'Updated!',
-                    'Your Data has been update.',
-                    'success'
-                )
-            }
-        })
-    }
-
     return (
         <div>
             <h3>my toys : {addedtoys.length}</h3>
             <div className="overflow-x-auto w-full mt-16">
                 <table className="table w-full">
                     <thead>
-                        <tr> <th>#</th>
+                        <tr>
                             <th>Delete / Update</th>
                             <th>Toys</th>
                             <th>Toys Name</th>
@@ -100,9 +81,43 @@ const My_toys = () => {
                                 toy={toy}
                                 key={toy._id}
                                 deleteItems={deleteItems}
-                                updateItems={updateItems}
                             ></AddedToysList>)
                         }
+
+
+                        {/* {
+                            addedtoys.map(toy =>
+                                <tr>
+                                    <td >
+                                        <button className='mr-4' onClick={() => deleteItems(_id)}><FaTrash className='text-xl' /></button>
+                                        
+                                        <button  onClick={() => setShowModal(true)}><FaPen className='text-xl' /></button>
+                                    </td>
+                                    <td>
+                                        <div className="flex items-center space-x-3">
+                                            <div className="mask mask-squircle w-36 ">
+                                                <img src={toy.toys_image} alt="toys" />
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h4 className='font-bold'>{toy.toys_name}</h4>
+                                    </td>
+                                    <td>
+                                        <h4 className='font-bold'>{toy.sub_category}</h4>
+                                    </td>
+                                    <td>
+                                        <h4 className='font-bold'>{toy.quantity}</h4>
+                                    </td>
+                                    <td>
+                                        <h4 className='font-bold'>{toy.email}</h4>
+                                    </td>
+                                    <th>
+                                        <button className="btn btn-ghost btn-xs">details</button>
+                                    </th>
+                                </tr>)
+                        } */}
 
 
 

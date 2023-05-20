@@ -12,6 +12,8 @@ import My_toys from '../Pages/My_toys/My_toys';
 import Blog from '../Pages/Blog/Blog';
 import All_toys from '../Pages/All_Toys/All_toys';
 import Modal_Data from '../Component/Modal/Modal_Data';
+import UpdateData from '../Pages/UpdateData/UpdateData';
+import Details from '../Component/Details/Details';
 const router = createBrowserRouter([
     {
         path: "/",
@@ -45,11 +47,21 @@ const router = createBrowserRouter([
                 path:'/blog',
                 element: <Blog></Blog>
             },
+            {
+                path:'/updateData/:id',
+                element: <UpdateData></UpdateData>,
+                loader : ({params})=> fetch(`http://localhost:5000/toys/${params.id}`)
+            },
+            {
+                path:'/toysDetails/:id',
+                element: <Details></Details>,
+                loader : ({params})=> fetch(`http://localhost:5000/toys/${params.id}`)
+            },
         ]
     },
     {
         path:'/modal',
-        element:<Modal_Data></Modal_Data>
+        element:<UpdateData></UpdateData>
     }
 ]);
 

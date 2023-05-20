@@ -1,15 +1,28 @@
-import React, { useContext } from 'react';
-import { useForm } from "react-hook-form";
-import { AuthContext } from '../../AuthProvaider/Provaides';
+import React, { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { useLoaderData, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-const Add_toys = () => {
-    const { user } = useContext(AuthContext)
-console.log(user)
+const UpdateData = () => {
 
+    const toysData = useLoaderData();
+    const navigate=useNavigate()
+    console.log(toysData)
+    const {
+        description,
+        email,
+        price,
+        quantity,
+        rating,
+        seller_name,
+        sub_category,
+        toys_image,
+        toys_name,
+        _id
+    } = toysData
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
     } = useForm();
 
@@ -17,22 +30,29 @@ console.log(user)
 
     const onSubmit = (data) => {
         console.log(data)
-        fetch('http://localhost:5000/addtoys', {
-            method: 'POST',
+
+        fetch(`http://localhost:5000/updateJob/${_id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(data)
-
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                if (data.insertedId) {
-                    alert('hoise')
+                console.log(data.modifiedCount)
+                if (data.modifiedCount > 0) {
+                    Swal.fire(
+                        'Good job!',
+                        'Update this Coffee',
+                        'success'
+                    )
+                    navigate('/mytoys')
                 }
             })
+
     };
+
 
 
 
@@ -47,11 +67,13 @@ console.log(user)
                         className="input input-bordered w-full "
                         {...register("toys_name", { required: true })}
                         placeholder="toy name"
+                        defaultValue={toys_name}
                     />
                     <input
                         className="input input-bordered w-full"
                         {...register("sub_category", { required: true })}
                         placeholder="sub category"
+                        defaultValue={sub_category}
                     />
                 </div>
                 <div className='flex flex-col md:flex-row gap-8'>
@@ -60,12 +82,14 @@ console.log(user)
                         className="input input-bordered w-full"
                         {...register("quantity", { required: true })}
                         placeholder="quantity"
+                        defaultValue={quantity}
                         type="number"
                     />
                     <input
                         className="input input-bordered w-full"
                         {...register("price", { required: true })}
                         placeholder="price"
+                        defaultValue={price}
                         type="number"
                     />
 
@@ -76,38 +100,28 @@ console.log(user)
                         className="input input-bordered w-full "
                         {...register("toys_image")}
                         placeholder="toys image"
+                        defaultValue={toys_image}
                     />
                     <input
                         className="input input-bordered w-full"
                         {...register("rating", { required: true })}
                         placeholder="rating"
+                        defaultValue={rating}
                         type="number"
                     />
                 </div>
-                <div className='flex flex-col md:flex-row gap-8'>
-                    <input
-                        className="input input-bordered w-full"
-                        {...register("email", { required: true })}
-                        value={user?.email}
-                    />
-                    <input
-                        className="input input-bordered w-full"
-                        {...register("seller_name", { required: true })}
-                        value={user?.displayName}
-                        type="text"
-                    />
 
-                </div>
 
                 <input
                     className="input input-bordered w-full "
                     {...register("description")}
                     placeholder="description"
+                    defaultValue={description}
                 />
-                <input className="submit-btn btn w-full" value="Post Job" type="submit" />
+                <input className="submit-btn btn w-full" value="Update Toys Details" type="submit" />
             </form>
         </div>
     );
 };
 
-export default Add_toys;
+export default UpdateData;

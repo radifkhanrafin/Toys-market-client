@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AllToysTbl = ({ toy }) => {
     const {
@@ -10,7 +11,8 @@ const AllToysTbl = ({ toy }) => {
         seller_name,
         sub_category,
         toys_image,
-        toys_name
+        toys_name,
+        _id
     } = toy
 
     return (
@@ -31,19 +33,9 @@ const AllToysTbl = ({ toy }) => {
                 <h4 className='font-bold'>{quantity}</h4>
             </td>
             <td>
-                <label htmlFor="my-modal-6" className="btn">Details</label>
+            <Link to={`/toysDetails/${_id}`}>details</Link>
             </td>
-            <input type="checkbox" id="my-modal-6" className="modal-toggle" />
-            <div className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box">
-                    <h3 className="font-bold text-lg">Congratulations random Internet user!</h3>
-                    <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
-                    <div className="modal-action">
-                        <label htmlFor="my-modal-6" className="btn">Yay!</label>
-                    </div>
-                </div>
-            </div>
-
+            
         </tr>
 
     );

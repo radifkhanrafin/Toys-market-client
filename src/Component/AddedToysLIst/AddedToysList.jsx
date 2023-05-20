@@ -1,9 +1,10 @@
 import React from 'react';
-import { FaBeer, FaPen, FaTrash } from 'react-icons/fa';
+import {  FaPen, FaTrash } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 
-const AddedToysList = ({ toy, index, deleteItems, updateItems }) => {
+const AddedToysList = ({ toy, index, deleteItems }) => {
     const {
         description,
         email,
@@ -24,10 +25,9 @@ const AddedToysList = ({ toy, index, deleteItems, updateItems }) => {
 
     return (
         <tr>
-            <td>{index + 1}</td>
             <td >
                 <button className='mr-4' onClick={() => deleteItems(_id)}><FaTrash className='text-xl' /></button>
-                <button onClick={() => updateItems(_id)}><FaPen className='text-xl' /></button>
+                <button><Link to={`/updateData/${_id}`}><FaPen className='text-xl' /></Link></button>
             </td>
             <td>
                 <div className="flex items-center space-x-3">
@@ -50,8 +50,8 @@ const AddedToysList = ({ toy, index, deleteItems, updateItems }) => {
                 <h4 className='font-bold'>{email}</h4>
             </td>
             <th>
-                <button className="btn btn-ghost btn-xs">details</button>
-            </th>
+                <Link to={`/toysDetails/${_id}`}>details</Link>
+            </th> 
         </tr>
     );
 };

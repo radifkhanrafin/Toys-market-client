@@ -1,16 +1,36 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const Details = () => {
+    const toysDetails = useLoaderData()
+    console.log(toysDetails)
+    const {
+        description,
+        email,
+        price,
+        quantity,
+        rating,
+        seller_name,
+        sub_category,
+        toys_image,
+        toys_name,
+        _id
+    } = toysDetails
+
     return (
-        <div>
-            <input type="checkbox" id="my-modal-6" className="modal-toggle" />
-            <div className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box">
-                    <h3 className="font-bold text-lg">Congratulations random Internet user!</h3>
-                    <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
-                    <div className="modal-action">
-                        <label htmlFor="my-modal-6" className="btn">Yay!</label>
-                    </div>
+        <div className="hero min-h-screen ">
+            <div className="hero-content w-full flex-col lg:flex-row  ">
+                <div className=''>
+                    <img src={toys_image} className=" w-[900px] rounded-lg shadow-2xl" />
+                </div>
+                <div className='space-y-3 font-semibold '>
+                    <h1 className="text-3xl font-bold italic">Model : {toys_name}</h1>
+                    <p className="">Price : {price}</p>
+                    <p className="">Rating : {rating}</p>
+                    <p className="">Quantity : {quantity}</p>
+                    <p className="">Description : {description}</p>
+                    <p className="opacity-70">Seller : {seller_name}</p>
+                    <p className="opacity-70">Seller Email :{email}</p>
                 </div>
             </div>
         </div>
