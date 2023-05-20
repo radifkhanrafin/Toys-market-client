@@ -31,7 +31,7 @@ const UpdateData = () => {
     const onSubmit = (data) => {
         console.log(data)
 
-        fetch(`http://localhost:5000/updateJob/${_id}`, {
+        fetch(`https://toye-data-server.vercel.app/updateJob/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

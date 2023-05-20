@@ -31,7 +31,7 @@ const Toys_card = ({ toy  }) => {
                     <h2 className="card-title">Price : {price} $</h2>
                     <p>Rating : {rating}</p>
                     <div className="card-actions justify-end">
-                        <Link ><FaArrowAltCircleRight className='text-3xl text-neutral-500' /></Link>
+                    <Link to={`/toysDetails/${_id}`}><FaArrowAltCircleRight className='text-3xl text-neutral-500' /></Link>
                     </div>
                 </div>
             </div>

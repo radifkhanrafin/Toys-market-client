@@ -1,32 +1,40 @@
-import React ,  { useContext }  from 'react';
+import React, { useContext } from 'react';
 import { FaFacebook, FaGithub, FaGofore } from 'react-icons/fa';
 import { AuthContext } from '../../AuthProvaider/Provaides';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Socal_Login = () => {
-
-
-    const { googleLogin, githubLogin } =useContext(AuthContext)
+    
+    const { googleLogin, githubLogin } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || "/";
 
     const handleGoogleLogin = () => {
-        console.log('active google')
         googleLogin()
             .then(result => {
                 console.log(result.user)
+                toast('Login Successfull')
+                navigate(from, { replace: true })
             })
             .catch(err => console.log(err))
     }
     const handleFacebookLogin = () => {
-        console.log('active facebook')
-
+        toast('this is demo')
     }
     const handleGithubLogin = () => {
-        console.log('active github')
         githubLogin()
             .then(result => {
                 console.log(result.user)
+                toast('Login Successfull')
+                navigate(from, { replace: true })
             })
             .catch(err => {
                 console.log(err)
+                navigate(from)
             })
     }
 
@@ -39,10 +47,10 @@ const Socal_Login = () => {
                     <  FaGofore className='text-blue-800 text-3xl' />
                 </button>
                 <button onClick={handleFacebookLogin} className="btn btn-circle btn-outline mr-5">
-                    <FaFacebook   className='text-blue-800 text-3xl'/>
+                    <FaFacebook className='text-blue-800 text-3xl' />
                 </button>
                 <button onClick={handleGithubLogin} className="btn btn-circle btn-outline">
-                    <FaGithub  className='text-black text-3xl' />
+                    <FaGithub className='text-black text-3xl' />
                 </button>
             </div>
         </div>

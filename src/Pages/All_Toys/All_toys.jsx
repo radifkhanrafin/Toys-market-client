@@ -10,7 +10,7 @@ const All_toys = () => {
     const [searchToy, setSearchToy] = useState("");
     const [searchResult, setSearchresult] = useState(true)
 
-    const allToysUrl = 'http://localhost:5000/toys'
+    const allToysUrl = 'https://toye-data-server.vercel.app/toys'
 
     useEffect(() => {
         fetch(allToysUrl)
@@ -26,15 +26,14 @@ const All_toys = () => {
     // console.log(alltoys.length)
 
     const handleSearch = () => {
-        fetch(`http://localhost:5000/toysBySearch/${searchToy}`)
+        fetch(`https://toye-data-server.vercel.app/toysBySearch/${searchToy}`)
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data);
                 setAlltoys(data);
                 if (data.length === 0) {
                     setSearchresult(false)
-                }
-                 else {
+                } else {
                     setSearchresult(true)
                 }
 
@@ -46,7 +45,6 @@ const All_toys = () => {
             <h1>toys Length : {alltoys.length}</h1>
             <div className="search-box p-2 text-center">
                 <input
-                required
                     onChange={(e) => setSearchToy(e.target.value)}
                     type="text"
                     className="py-1 px-4 text-center border-2 rounded-md border-primary w-72"
@@ -68,13 +66,21 @@ const All_toys = () => {
                     </thead>
 
                     <tbody>
+                            {
+                                searchResult ?
+                                    <>
+                                        {
+                                            alltoys.map(toy => <AllToysTbl
+                                                toy={toy}
+                                                key={toy._id}
+                                            ></AllToysTbl>)
+                                        }
+                                    </> :
+                                    < >
+                                        <Lottie animationData={noDataFound}></Lottie>
+                                    </>
+                            }
 
-                        {
-                            alltoys.map(toy => <AllToysTbl
-                                toy={toy}
-                                key={toy._id}
-                            ></AllToysTbl>)
-                        }
                     </tbody>
 
                 </table>

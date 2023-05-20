@@ -14,6 +14,7 @@ import All_toys from '../Pages/All_Toys/All_toys';
 import Modal_Data from '../Component/Modal/Modal_Data';
 import UpdateData from '../Pages/UpdateData/UpdateData';
 import Details from '../Component/Details/Details';
+import PrivateRoutes from './PrivateRoutes';
 const router = createBrowserRouter([
     {
         path: "/",
@@ -33,11 +34,11 @@ const router = createBrowserRouter([
             },
             {
                 path:'/addtoy',
-                element: <Add_toys></Add_toys>
+                element: <PrivateRoutes><Add_toys></Add_toys></PrivateRoutes>
             },
             {
                 path:'/mytoys',
-                element: <My_toys></My_toys>
+                element: <PrivateRoutes><My_toys></My_toys></PrivateRoutes>
             },
             {
                 path:'/allToys',
@@ -50,12 +51,12 @@ const router = createBrowserRouter([
             {
                 path:'/updateData/:id',
                 element: <UpdateData></UpdateData>,
-                loader : ({params})=> fetch(`http://localhost:5000/toys/${params.id}`)
+                loader : ({params})=> fetch(`https://toye-data-server.vercel.app/toys/${params.id}`)
             },
             {
                 path:'/toysDetails/:id',
-                element: <Details></Details>,
-                loader : ({params})=> fetch(`http://localhost:5000/toys/${params.id}`)
+                element: <PrivateRoutes><Details></Details></PrivateRoutes>,
+                loader : ({params})=> fetch(`https://toye-data-server.vercel.app/toys/${params.id}`)
             },
         ]
     },

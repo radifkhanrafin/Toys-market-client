@@ -11,7 +11,7 @@ const My_toys = () => {
     // console.log(user?.email)
     const [addedtoys, setAddedtoys] = useState([]);
 
-    const url = `http://localhost:5000/mytoys?email=${user?.email}`
+    const url = `https://toye-data-server.vercel.app/mytoys?email=${user?.email}`
 
     useEffect(() => {
         fetch(url)
@@ -34,7 +34,7 @@ const My_toys = () => {
         }).then((result) => {
 
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/mytoys/${_id}`, {
+                fetch(`https://toye-data-server.vercel.app/mytoys/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

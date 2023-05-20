@@ -18,11 +18,6 @@ const AddedToysList = ({ toy, index, deleteItems }) => {
         _id
      } = toy
 
-
-
-
-
-
     return (
         <tr>
             <td >

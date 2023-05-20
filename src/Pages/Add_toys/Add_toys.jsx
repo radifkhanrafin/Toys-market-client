@@ -20,7 +20,7 @@ console.log(user)
 
     const onSubmit = (data) => {
         console.log(data)
-        fetch('http://localhost:5000/addtoys', {
+        fetch('https://toye-data-server.vercel.app/addtoys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

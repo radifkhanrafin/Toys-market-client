@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Toys_card from '../Toys_Card/Toys_card';
-import Modal_Data from '../Modal/Modal_Data';
 
 const ToysByCategory = () => {
     const [activeTab, setActiveTab] = useState("");
@@ -9,7 +8,7 @@ const ToysByCategory = () => {
         setActiveTab(tabName);
     };
     useEffect(() => {
-        fetch(`http://localhost:5000/toyByCategory/${activeTab}`)
+        fetch(`https://toye-data-server.vercel.app/toyByCategory/${activeTab}`)
             .then((res) => res.json())
             .then((result) => {
                 console.log(result)

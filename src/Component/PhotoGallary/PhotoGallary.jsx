@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Marquee from "react-fast-marquee";
 const PhotoGallary = () => {
     const [toys, setToys] = useState([])
-    const toysUrl = 'http://localhost:5000/toys'
+    const toysUrl = 'https://toye-data-server.vercel.app/toys'
     useEffect(() => {
         fetch(toysUrl)
             .then(res => res.json())

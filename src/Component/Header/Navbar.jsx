@@ -1,12 +1,19 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvaider/Provaides';
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     // console.log(user?.photoURL)
     const handleLogOut = () => {
         logOut()
+        .then(result=>{
+            toast('Log out successfull')
+        })
+        .catch(err=>{
+            console.log(err)
+        })
     }
     const navbarList = <>
         <li><Link>Home</Link></li>
