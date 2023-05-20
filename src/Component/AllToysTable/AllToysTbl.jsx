@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const AllToysTbl = ({ toy }) => {
+const AllToysTbl = ({ toy,searchResult }) => {
     const {
         description,
         email,
@@ -16,8 +16,8 @@ const AllToysTbl = ({ toy }) => {
     } = toy
 
     return (
+        
         <tr>
-
             <td td >
                 <h4 className='font-bold'>{toys_name}</h4>
             </td >

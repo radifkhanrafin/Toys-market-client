@@ -59,10 +59,6 @@ const router = createBrowserRouter([
             },
         ]
     },
-    {
-        path:'/modal',
-        element:<UpdateData></UpdateData>
-    }
 ]);
 
 export default router;

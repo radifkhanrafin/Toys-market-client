@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
-import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvaider/Provaides';
 import Socal_Login from '../../Component/Socal_Login/Socal_Login';
+import Lottie from "lottie-react"; 
+import  loginAnimation from "../../assets/132033-green-login.json";
 
 const Login = () => {
 
@@ -24,7 +25,7 @@ const Login = () => {
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex flex-col lg:flex-row">
                 <div className="">
-                    <img className='' src='' alt="" />
+                    <Lottie animationData={loginAnimation}></Lottie> 
                 </div>
                 <div className="card  w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">

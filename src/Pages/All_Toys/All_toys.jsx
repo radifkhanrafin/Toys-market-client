@@ -1,7 +1,8 @@
-import { data } from 'autoprefixer';
+
 import React, { useEffect, useState } from 'react';
 import AllToysTbl from '../../Component/AllToysTable/AllToysTbl';
-
+import Lottie from "lottie-react";
+import noDataFound from "../../assets/no data found.json";
 const All_toys = () => {
 
 
@@ -32,7 +33,8 @@ const All_toys = () => {
                 setAlltoys(data);
                 if (data.length === 0) {
                     setSearchresult(false)
-                } else {
+                }
+                 else {
                     setSearchresult(true)
                 }
 
@@ -44,6 +46,7 @@ const All_toys = () => {
             <h1>toys Length : {alltoys.length}</h1>
             <div className="search-box p-2 text-center">
                 <input
+                required
                     onChange={(e) => setSearchToy(e.target.value)}
                     type="text"
                     className="py-1 px-4 text-center border-2 rounded-md border-primary w-72"
@@ -55,7 +58,6 @@ const All_toys = () => {
                 <table className="table w-full">
                     <thead>
                         <tr>
-
                             <th>Toys Name</th>
                             <th>Toys Category</th>
                             <th>Price</th>
@@ -64,19 +66,15 @@ const All_toys = () => {
                             <th>Details</th>
                         </tr>
                     </thead>
+
                     <tbody>
+
                         {
-                            searchResult ? <>
-                            {
-                                alltoys.map(toy => <AllToysTbl
-                                    toy={toy}
-                                    key={toy._id}
-                                ></AllToysTbl>)
-                            } </>: 'no data'
-                           }
-
-
-
+                            alltoys.map(toy => <AllToysTbl
+                                toy={toy}
+                                key={toy._id}
+                            ></AllToysTbl>)
+                        }
                     </tbody>
 
                 </table>

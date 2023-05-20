@@ -10,9 +10,9 @@ const PhotoGallary = () => {
     }, []);
     console.log(toys)
     return (
-        <div className='my-12'>
-            <div className='my-8 text-center'>
-                <Marquee className=' w-3/4 mx-auto'>
+        <div className='my-12 '>
+            <div className='w-3/4 mx-auto my-5'>
+                <Marquee className=' p-1 rounded-lg bg-gradient-to-r from-blue-400 via-violet-600 to-blue-500'>
                     I can be a React component, multiple React components, or just some text.
                 </Marquee>
             </div>
