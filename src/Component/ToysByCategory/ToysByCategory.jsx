@@ -8,18 +8,16 @@ const ToysByCategory = () => {
         setActiveTab(tabName);
     };
     useEffect(() => {
-        fetch(`https://toye-data-server.vercel.app/toyByCategory/${activeTab}`)
+        fetch(`https://b7a11-toy-marketplace-server-side-radifkhanrafin-6yl9.vercel.app/toyByCategory/${activeTab}`)
             .then((res) => res.json())
             .then((result) => {
                 console.log(result)
                 setSelectcategory(result);
             });
     }, [activeTab]);
-    console.log(selectCategory)
     return (
         <div className='my-12  '> 
         
-        → 
        
             <div className='bg-gradient-to-r from-[#1F1C2C]  to-[#61045F]  p-3 mb-10 rounded-2xl'>
                 <h2 className='text-5xl my-8 font-bold text-center text-transparent bg-clip-text  bg-gradient-to-r from-[#626be7] via-[#BC36FF]  to-[#FF2E66]'>You can search Toys By Using this <br /> Sub-Categoy

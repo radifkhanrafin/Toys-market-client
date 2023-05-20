@@ -10,14 +10,14 @@ const All_toys = () => {
     const [searchToy, setSearchToy] = useState("");
     const [searchResult, setSearchresult] = useState(true)
 
-    const allToysUrl = 'https://toye-data-server.vercel.app/toys'
+    // const allToysUrl = 'https://toye-data-server.vercel.app/toys'
+    const allToysUrl = 'https://b7a11-toy-marketplace-server-side-radifkhanrafin-6yl9.vercel.app/toys'
 
     useEffect(() => {
         fetch(allToysUrl)
             .then(res => res.json())
             .then(data => {
                 setAlltoys(data)
-                console.log(data)
                 if (data.length == 0) {
                     setSearchresult(false)
                 }
@@ -26,7 +26,7 @@ const All_toys = () => {
     // console.log(alltoys.length)
 
     const handleSearch = () => {
-        fetch(`https://toye-data-server.vercel.app/toysBySearch/${searchToy}`)
+        fetch(`https://b7a11-toy-marketplace-server-side-radifkhanrafin-6yl9.vercel.app/toysBySearch/${searchToy}`)
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data);
@@ -39,7 +39,6 @@ const All_toys = () => {
 
             });
     };
-    console.log(searchResult)
     return (
         <div>
             <h1>toys Length : {alltoys.length}</h1>

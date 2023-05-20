@@ -31,7 +31,7 @@ const UpdateData = () => {
     const onSubmit = (data) => {
         console.log(data)
 
-        fetch(`https://toye-data-server.vercel.app/updateJob/${_id}`, {
+        fetch(`https://b7a11-toy-marketplace-server-side-radifkhanrafin-6yl9.vercel.app/updateJob/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

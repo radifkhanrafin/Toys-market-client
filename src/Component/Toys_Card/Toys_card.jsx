@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
-import { FaArrowAltCircleRight, FaBeer } from 'react-icons/fa';
-import Modal from '../Modal/Modal_Data';
-const Toys_card = ({ toy  }) => {
-    
+import { FaArrowAltCircleRight,  } from 'react-icons/fa';
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
+
+const Toys_card = ({ toy }) => {
+
     const {
         description,
         email,
@@ -30,8 +32,13 @@ const Toys_card = ({ toy  }) => {
                     <h2 className="card-title">Model : {toys_name}</h2>
                     <h2 className="card-title">Price : {price} $</h2>
                     <p>Rating : {rating}</p>
+                    <Rating
+                        style={{ maxWidth: 180 }}
+                        value={rating}
+                        readOnly
+                    />
                     <div className="card-actions justify-end">
-                    <Link to={`/toysDetails/${_id}`}><FaArrowAltCircleRight className='text-3xl text-neutral-500' /></Link>
+                        <Link to={`/toysDetails/${_id}`}><FaArrowAltCircleRight className='text-3xl text-neutral-500' /></Link>
                     </div>
                 </div>
             </div>

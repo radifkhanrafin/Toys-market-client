@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../AuthProvaider/Provaides';
+import { AuthContext } from '../../AuthProvaider/Provaider';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-    // console.log(user?.photoURL)
+    console.log(user?.photoURL)
     const handleLogOut = () => {
         logOut()
         .then(result=>{
@@ -30,7 +30,7 @@ const Navbar = () => {
 
         <li>
             {
-                user && <div className="tooltip tooltip-bottom mx-2" data-tip={user.email}>
+                user && <div className="tooltip tooltip-bottom mx-2" data-tip={user.displayName}>
                     <button className="-m-14">
                         <img className='w-12 -mb-5 rounded-full' src={user.photoURL} alt="" />
                     </button>

@@ -1,13 +1,14 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
-import app from '../../firebase.config';
+import app from '../firebase/firebase.config';
+
 
 
 export const AuthContext = createContext()
 const Auth = getAuth(app)
 
 
-const Provaides = ({ children }) => {
+const Provaider = ({ children }) => {
     
     const googleProvaider = new GoogleAuthProvider();
     const gitHubProvaider = new GithubAuthProvider();
@@ -65,4 +66,4 @@ const Provaides = ({ children }) => {
     );
 };
 
-export default Provaides;
+export default Provaider;

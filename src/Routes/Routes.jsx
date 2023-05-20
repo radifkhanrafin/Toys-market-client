@@ -51,12 +51,12 @@ const router = createBrowserRouter([
             {
                 path:'/updateData/:id',
                 element: <UpdateData></UpdateData>,
-                loader : ({params})=> fetch(`https://toye-data-server.vercel.app/toys/${params.id}`)
+                loader : ({params})=> fetch(`https://b7a11-toy-marketplace-server-side-radifkhanrafin-6yl9.vercel.app/toys/${params.id}`)
             },
             {
                 path:'/toysDetails/:id',
                 element: <PrivateRoutes><Details></Details></PrivateRoutes>,
-                loader : ({params})=> fetch(`https://toye-data-server.vercel.app/toys/${params.id}`)
+                loader : ({params})=> fetch(`https://b7a11-toy-marketplace-server-side-radifkhanrafin-6yl9.vercel.app/toys/${params.id}`)
             },
         ]
     },

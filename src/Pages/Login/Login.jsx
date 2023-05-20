@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../AuthProvaider/Provaides';
+import { AuthContext } from '../../AuthProvaider/Provaider';
 import Socal_Login from '../../Component/Socal_Login/Socal_Login';
 import Lottie from "lottie-react";
 import loginAnimation from "../../assets/132033-green-login.json";

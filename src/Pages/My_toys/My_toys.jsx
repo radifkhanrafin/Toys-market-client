@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AddedToysList from '../../Component/AddedToysLIst/AddedToysList';
 import Swal from 'sweetalert2';
 import { useContext } from 'react';
-import { AuthContext } from '../../AuthProvaider/Provaides';
-import { FaPen, FaTrash } from 'react-icons/fa';
+import { AuthContext } from '../../AuthProvaider/Provaider';
 
 const My_toys = () => {
 
@@ -11,7 +10,7 @@ const My_toys = () => {
     // console.log(user?.email)
     const [addedtoys, setAddedtoys] = useState([]);
 
-    const url = `https://toye-data-server.vercel.app/mytoys?email=${user?.email}`
+    const url = `https://b7a11-toy-marketplace-server-side-radifkhanrafin-6yl9.vercel.app/mytoys?email=${user?.email}`
 
     useEffect(() => {
         fetch(url)
@@ -34,7 +33,7 @@ const My_toys = () => {
         }).then((result) => {
 
             if (result.isConfirmed) {
-                fetch(`https://toye-data-server.vercel.app/mytoys/${_id}`, {
+                fetch(`https://b7a11-toy-marketplace-server-side-radifkhanrafin-6yl9.vercel.app/mytoys/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -83,41 +82,6 @@ const My_toys = () => {
                                 deleteItems={deleteItems}
                             ></AddedToysList>)
                         }
-
-
-                        {/* {
-                            addedtoys.map(toy =>
-                                <tr>
-                                    <td >
-                                        <button className='mr-4' onClick={() => deleteItems(_id)}><FaTrash className='text-xl' /></button>
-                                        
-                                        <button  onClick={() => setShowModal(true)}><FaPen className='text-xl' /></button>
-                                    </td>
-                                    <td>
-                                        <div className="flex items-center space-x-3">
-                                            <div className="mask mask-squircle w-36 ">
-                                                <img src={toy.toys_image} alt="toys" />
-                                            </div>
-
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <h4 className='font-bold'>{toy.toys_name}</h4>
-                                    </td>
-                                    <td>
-                                        <h4 className='font-bold'>{toy.sub_category}</h4>
-                                    </td>
-                                    <td>
-                                        <h4 className='font-bold'>{toy.quantity}</h4>
-                                    </td>
-                                    <td>
-                                        <h4 className='font-bold'>{toy.email}</h4>
-                                    </td>
-                                    <th>
-                                        <button className="btn btn-ghost btn-xs">details</button>
-                                    </th>
-                                </tr>)
-                        } */}
 
 
 

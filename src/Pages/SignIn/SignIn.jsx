@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../AuthProvaider/Provaides';
+import { AuthContext } from '../../AuthProvaider/Provaider';
 import Lottie from "lottie-react";
 import animationSignUp from "../../assets/signup.json";
 const SignIn = () => {

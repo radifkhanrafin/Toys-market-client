@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { FaFacebook, FaGithub, FaGofore } from 'react-icons/fa';
-import { AuthContext } from '../../AuthProvaider/Provaides';
+import { AuthContext } from '../../AuthProvaider/Provaider';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

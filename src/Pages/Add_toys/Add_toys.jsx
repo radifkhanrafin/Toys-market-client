@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
-import { AuthContext } from '../../AuthProvaider/Provaides';
-import Lottie from "lottie-react"; 
+import { AuthContext } from '../../AuthProvaider/Provaider';
+import Lottie from "lottie-react";
 import addAnimation from "../../assets/addAnimation.json";
+import { toast } from 'react-toastify';
 
 
 const Add_toys = () => {
     const { user } = useContext(AuthContext)
-console.log(user)
+    // console.log(user)
 
     const {
         register,
@@ -20,7 +21,7 @@ console.log(user)
 
     const onSubmit = (data) => {
         console.log(data)
-        fetch('https://toye-data-server.vercel.app/addtoys', {
+        fetch('https://b7a11-toy-marketplace-server-side-radifkhanrafin-6yl9.vercel.app/addtoys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -32,7 +33,7 @@ console.log(user)
             .then(data => {
                 console.log(data)
                 if (data.insertedId) {
-                    alert('hoise')
+                    toast('successfully add')
                 }
             })
     };
@@ -53,11 +54,21 @@ console.log(user)
                         {...register("toys_name", { required: true })}
                         placeholder="toy name"
                     />
-                    <input
+                    {/* <input
                         className="input input-bordered w-full"
                         {...register("sub_category", { required: true })}
                         placeholder="sub category"
-                    />
+                    /> */}
+                    <select className="input input-bordered w-full" {...register("sub_category")}
+                    defaultValue={''}
+                    placeholder='toys Category'
+                    >
+                        <option value="police_car">Police Car</option>
+                        <option value="sports_car">Sport Car</option>
+                        <option value="track">Track</option>
+                        <option value="regular_car">Regular Car</option>
+                        <option value="fire_car">Fire Car</option>
+                    </select>
                 </div>
                 <div className='flex flex-col md:flex-row gap-8'>
 
@@ -111,7 +122,7 @@ console.log(user)
                     {...register("description")}
                     placeholder="description"
                 />
-                <input className="submit-btn btn w-full" value="Post Job" type="submit" />
+                <input className="submit-btn btn w-full" value="Add toy" type="submit" />
             </form>
         </div>
     );

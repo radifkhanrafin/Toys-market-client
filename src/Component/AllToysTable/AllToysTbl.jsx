@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const AllToysTbl = ({ toy,searchResult }) => {
+const AllToysTbl = ({ toy }) => {
     const {
         description,
         email,
