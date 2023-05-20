@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../../AuthProvaider/Provaides';
+import Lottie from "lottie-react"; 
+import addAnimation from "../../assets/addAnimation.json";
+
 
 const Add_toys = () => {
     const { user } = useContext(AuthContext)
@@ -38,8 +41,10 @@ console.log(user)
 
     return (
         <div className='flex  flex-col md:flex-row mt-16 bg-gray-300 p-20 rounded-md'>
-            <div className='w-1/2'></div>
-            <form className='space-y-8 w-1/2'
+            <div className='w-full md:w-1/2'>
+                <Lottie animationData={addAnimation}></Lottie>
+            </div>
+            <form className='space-y-8 w-full md:w-1/2'
                 onSubmit={handleSubmit(onSubmit)}
             >
                 <div className='flex flex-col md:flex-row gap-8'>
@@ -88,12 +93,14 @@ console.log(user)
                     <input
                         className="input input-bordered w-full"
                         {...register("email", { required: true })}
+                        placeholder='Seller Email'
                         value={user?.email}
                     />
                     <input
                         className="input input-bordered w-full"
                         {...register("seller_name", { required: true })}
                         value={user?.displayName}
+                        placeholder='Seller name'
                         type="text"
                     />
 

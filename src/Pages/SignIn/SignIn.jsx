@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvaider/Provaides';
-
+import Lottie from "lottie-react"; 
+import animationSignUp from "../../assets/signup.json";
 const SignIn = () => {
 
     const {createUser}=useContext(AuthContext)
@@ -26,7 +27,7 @@ const SignIn = () => {
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex flex-col lg:flex-row">
                 <div className="">
-                    <img className='' src='' alt="" />
+                    <Lottie className='h-[700px]' animationData={animationSignUp } loop={0} ></Lottie>
                 </div>
                 <div className="card  w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
