@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.gradient-bg {
+    @apply shadow-2xl rounded-br-full text-white font-bold bg-gradient-to-t from-[#432371] to-[#faae7b] bg-yellow-100 rounded-tr-full rounded-tl-full rounded-b-lg h-72 space-y-3 text-center p-3
+}

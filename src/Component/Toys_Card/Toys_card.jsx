@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
-import { FaArrowAltCircleRight,  } from 'react-icons/fa';
+import { FaArrowAltCircleRight, } from 'react-icons/fa';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
-
+AOS.init();
 const Toys_card = ({ toy }) => {
 
     const {
@@ -23,24 +23,30 @@ const Toys_card = ({ toy }) => {
     return (
         <div>
             <div
-                data-aos="fade-down"
-                data-aos-easing="linear"
-                data-aos-duration="1500"
+                data-aos="fade-up-right"
                 className="card w-80 m-5 bg-base-100 shadow-xl">
                 <figure><img className='p-5 w-80 h-56 ' src={toys_image} alt="car" /></figure>
                 <div className="card-body">
-                    <h2 className="card-title">Model : {toys_name}</h2>
-                    <h2 className="card-title">Price : {price} $</h2>
-                    <p>Rating : {rating}</p>
-                    <Rating
-                        style={{ maxWidth: 180 }}
-                        value={rating}
-                        readOnly
-                    />
-                    <div className="card-actions justify-end">
-                        <Link to={`/toysDetails/${_id}`}><FaArrowAltCircleRight className='text-3xl text-neutral-500' /></Link>
+                    <div className='h-20'>
+                        <h2 className="card-title">Model : {toys_name}</h2>
+                        <h2 className="card-title">Price : {price} $</h2>
+                    </div>
+                    <div className='flex justify-between items-center'>
+                        <div className='flex gap-3 items-center'>
+                            <Rating
+                                style={{ maxWidth: 130 }}
+                                value={rating}
+                                readOnly
+                            />
+                            <p>{rating}</p>
+                        </div>
+                        <div className="card-actions justify-end">
+                            <Link to={`/toysDetails/${_id}`}><FaArrowAltCircleRight className='text-3xl text-neutral-500' /></Link>
+                        </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
     );

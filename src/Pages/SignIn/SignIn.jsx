@@ -3,8 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvaider/Provaider';
 import Lottie from "lottie-react";
 import animationSignUp from "../../assets/signup.json";
+import usetitle from '../../Component/Dynamic_Title/usetitle';
 const SignIn = () => {
 
+    usetitle('Sign Up')
     const navigate = useNavigate()
     const { createUser } = useContext(AuthContext)
 
@@ -20,7 +22,7 @@ const SignIn = () => {
         createUser(email, password ,name)
             .then(result => {
                 console.log(result.user)
-                // navigate('/login')
+                navigate('/login')
             })
             .catch(err => console.log(err))
 

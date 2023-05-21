@@ -2,9 +2,11 @@ import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import usetitle from '../../Component/Dynamic_Title/usetitle';
 
 const UpdateData = () => {
 
+    usetitle('Update Data')
     const toysData = useLoaderData();
     const navigate=useNavigate()
     console.log(toysData)

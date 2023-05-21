@@ -5,11 +5,12 @@ import Socal_Login from '../../Component/Socal_Login/Socal_Login';
 import Lottie from "lottie-react";
 import loginAnimation from "../../assets/132033-green-login.json";
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';;
+import 'react-toastify/dist/ReactToastify.css';import usetitle from '../../Component/Dynamic_Title/usetitle';
+;
 
 const Login = () => {
 
-
+usetitle('Login')
     const { signIn } = useContext(AuthContext)
     const location = useLocation();
     const navigate = useNavigate();

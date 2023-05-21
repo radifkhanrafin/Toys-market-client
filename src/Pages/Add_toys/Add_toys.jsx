@@ -4,11 +4,12 @@ import { AuthContext } from '../../AuthProvaider/Provaider';
 import Lottie from "lottie-react";
 import addAnimation from "../../assets/addAnimation.json";
 import { toast } from 'react-toastify';
+import usetitle from '../../Component/Dynamic_Title/usetitle';
 
 
 const Add_toys = () => {
     const { user } = useContext(AuthContext)
-    // console.log(user)
+    usetitle('Add Toys')
 
     const {
         register,

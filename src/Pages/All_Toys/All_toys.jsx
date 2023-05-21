@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react';
 import AllToysTbl from '../../Component/AllToysTable/AllToysTbl';
 import Lottie from "lottie-react";
 import noDataFound from "../../assets/no data found.json";
+import usetitle from '../../Component/Dynamic_Title/usetitle';
+
 const All_toys = () => {
-
-
+    usetitle('All Toys')
     const [alltoys, setAlltoys] = useState([])
     const [searchToy, setSearchToy] = useState("");
     const [searchResult, setSearchresult] = useState(true)

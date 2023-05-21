@@ -3,9 +3,10 @@ import AddedToysList from '../../Component/AddedToysLIst/AddedToysList';
 import Swal from 'sweetalert2';
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvaider/Provaider';
+import usetitle from '../../Component/Dynamic_Title/usetitle';
 
 const My_toys = () => {
-
+    usetitle('My Toys')
     const { user } = useContext(AuthContext)
     // console.log(user?.email)
     const [addedtoys, setAddedtoys] = useState([]);

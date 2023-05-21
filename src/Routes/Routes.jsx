@@ -15,10 +15,12 @@ import Modal_Data from '../Component/Modal/Modal_Data';
 import UpdateData from '../Pages/UpdateData/UpdateData';
 import Details from '../Component/Details/Details';
 import PrivateRoutes from './PrivateRoutes';
+import ErrorPage from '../Pages/Error_Page/ErrorPage';
 const router = createBrowserRouter([
     {
         path: "/",
         element: <App></App>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:'/',
