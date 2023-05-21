@@ -60,7 +60,6 @@ const My_toys = () => {
 
     return (
         <div>
-            <h3>my toys : {addedtoys.length}</h3>
             <div className="overflow-x-auto w-full mt-16">
                 <table className="table w-full">
                     <thead>

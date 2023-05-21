@@ -55,11 +55,6 @@ const Add_toys = () => {
                         {...register("toys_name", { required: true })}
                         placeholder="toy name"
                     />
-                    {/* <input
-                        className="input input-bordered w-full"
-                        {...register("sub_category", { required: true })}
-                        placeholder="sub category"
-                    /> */}
                     <select className="input input-bordered w-full" {...register("sub_category")}
                     defaultValue={''}
                     placeholder='toys Category'
@@ -98,6 +93,7 @@ const Add_toys = () => {
                         className="input input-bordered w-full"
                         {...register("rating", { required: true })}
                         placeholder="rating"
+                        max={5}
                         type="number"
                     />
                 </div>

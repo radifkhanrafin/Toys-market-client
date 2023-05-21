@@ -42,7 +42,6 @@ const All_toys = () => {
     };
     return (
         <div>
-            <h1>toys Length : {alltoys.length}</h1>
             <div className="search-box p-2 text-center">
                 <input
                     onChange={(e) => setSearchToy(e.target.value)}
